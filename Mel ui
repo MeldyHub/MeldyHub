@@ -2398,6 +2398,13 @@ function redzlib:MakeWindow(Configs)
 			end
 			return Dropdown
 		end
+-------redropdown
+function Dropdown:Refresh(NewList)
+    if type(NewList) ~= "table" then return end
+    AddNewOptions(NewList, true) -- true = ล้างออปชันเดิมก่อนเพิ่มใหม่
+end
+
+
 		function Tab:AddSlider(Configs)
 			local SName = Configs[1] or Configs.Name or Configs.Title or "Slider!"
 			local SDesc = Configs.Desc or Configs.Description or ""
